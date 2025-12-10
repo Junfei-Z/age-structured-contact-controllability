@@ -97,9 +97,9 @@ age-structured-contact-controllability/
 #### Core Files
 
 - **`5660_project.ipynb`**: The main Jupyter notebook containing all analysis code organized into three projects:
-  - **Project 1**: Data loading and initial exploration
-  - **Project 2**: Additional preprocessing and validation
-  - **Project 3**: Complete pipeline including:
+  - **Project 1**: Code for 5660 project 1
+  - **Project 2**: Code for 5660 project 2
+  - **Project 3**: Code for 5660 project 3 Complete pipeline including:
     - Network structure analysis (clustering, path length, efficiency)
     - Modularity analysis with Louvain community detection
     - Controllability analysis (average/modal controllability, minimum control energy)
