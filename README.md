@@ -1,27 +1,36 @@
-# Age-Structured Contact Network Controllability
+# 🧠 Age-Structured Contact Network Controllability
 
-This repository contains the complete analysis code and dataset for the ESE 5660 "Network Neuroscience" course project at the University of Pennsylvania.
+<div align="center">
 
-**Associated Paper**: *"Linking Network Structure, Modularity, and Controllability in Age-Structured Contact Networks"*
+![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)
+![License](https://img.shields.io/badge/License-Educational-green.svg)
+![Status](https://img.shields.io/badge/Status-Active-success.svg)
+![NetworkX](https://img.shields.io/badge/NetworkX-2.5+-orange.svg)
+
+</div>
+
+📚 This repository contains the complete analysis code and dataset for the **ESE 5660 "Network Neuroscience"** course project at the University of Pennsylvania.
+
+**📄 Associated Paper**: *"Linking Network Structure, Modularity, and Controllability in Age-Structured Contact Networks"*
 
 ---
 
-## Overview
+## 🔍 Overview
 
 This project investigates how network structure, community organization (modularity), and controllability interact in age-structured contact networks across different countries and social contexts. We analyze contact matrices from multiple locations to understand:
 
-- **Network Structure**: Basic topological properties (clustering, path length, degree distribution)
-- **Modularity**: Community detection using Louvain algorithm with null-model comparisons
-- **Controllability**: Average/modal controllability and minimum control energy metrics
+- 🕸️ **Network Structure**: Basic topological properties (clustering, path length, degree distribution)
+- 🧩 **Modularity**: Community detection using Louvain algorithm with null-model comparisons
+- 🎯 **Controllability**: Average/modal controllability and minimum control energy metrics
 
-### Key Research Questions
-- How does modularity vary across different social contexts (home, school, work)?
-- What is the relationship between network structure and controllability?
-- How do age-structured contact networks differ from random network models?
+### ❓ Key Research Questions
+- 🏠🏫💼 How does modularity vary across different social contexts (home, school, work)?
+- 🔗 What is the relationship between network structure and controllability?
+- 📊 How do age-structured contact networks differ from random network models?
 
 ---
 
-## Analysis Pipeline
+## 🔄 Analysis Pipeline
 
 The analysis follows a systematic pipeline:
 
@@ -70,7 +79,7 @@ The analysis follows a systematic pipeline:
 
 ---
 
-## Repository Structure
+## 📁 Repository Structure
 
 ```
 age-structured-contact-controllability/
@@ -92,9 +101,9 @@ age-structured-contact-controllability/
     └── MUestimates_other_locations_2.xlsx # Other contexts, Part 2
 ```
 
-### File Descriptions
+### 📝 File Descriptions
 
-#### Core Files
+#### 💻 Core Files
 
 - **`5660_project.ipynb`**: The main Jupyter notebook containing all analysis code organized into three projects:
   - **Project 1**: Code for 5660 project 1
@@ -107,7 +116,7 @@ age-structured-contact-controllability/
 
 - **`MUdata.zip`**: Compressed archive containing all contact matrix datasets
 
-#### Dataset Files (in MUdata/)
+#### 📊 Dataset Files (in MUdata/)
 
 All Excel files contain age-structured contact matrices from [Prem et al.](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005697) representing the average number of contacts between different age groups.
 
@@ -127,29 +136,29 @@ Each Excel file contains multiple sheets, with each sheet representing a differe
 
 ---
 
-## Dataset Description
+## 📦 Dataset Description
 
-### Source
+### 🌍 Source
 Contact matrices are from **Prem et al. (2017)**: ["Projecting social contact matrices in 152 countries using contact surveys and demographic data"](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005697), *PLOS Computational Biology*.
 
-### Structure
+### 📋 Structure
 - **Format**: Excel (.xlsx) files with multiple sheets (one per country)
 - **Matrix dimensions**: 16×16 age groups (typically 5-year age bins: 0-4, 5-9, ..., 75+)
 - **Values**: Expected number of daily contacts between age groups
 - **Countries**: 152 countries across all continents
 
-### Social Contexts
-1. **All locations**: Combined contacts across all settings
-2. **Home**: Household and family contacts
-3. **School**: Educational institution contacts
-4. **Work**: Workplace contacts
-5. **Other**: Community, transport, leisure, etc.
+### 🏢 Social Contexts
+1. 🌐 **All locations**: Combined contacts across all settings
+2. 🏠 **Home**: Household and family contacts
+3. 🏫 **School**: Educational institution contacts
+4. 💼 **Work**: Workplace contacts
+5. 🎪 **Other**: Community, transport, leisure, etc.
 
 ---
 
-## Getting Started
+## 🚀 Getting Started
 
-### Prerequisites
+### ⚙️ Prerequisites
 
 You need Python 3.7+ with the following packages:
 
@@ -173,7 +182,7 @@ openpyxl
 jupyter
 ```
 
-### Installation
+### 📥 Installation
 
 1. **Clone the repository**:
    ```bash
@@ -199,9 +208,9 @@ jupyter
 
 ---
 
-## How to Run the Analysis
+## ▶️ How to Run the Analysis
 
-### Step-by-Step Instructions
+### 📋 Step-by-Step Instructions
 
 1. **Open the Jupyter notebook**:
    ```bash
@@ -232,7 +241,7 @@ jupyter
    - Controllability metric distributions
    - Correlation analyses between structure and controllability
 
-### Quick Run (All at Once)
+### ⚡ Quick Run (All at Once)
 
 If you prefer to run everything without interaction:
 
@@ -244,7 +253,7 @@ This will execute all cells and save the results to a new notebook.
 
 ---
 
-## Reproducing Paper Results
+## 🔬 Reproducing Paper Results
 
 To reproduce the figures and results from the paper:
 
@@ -266,16 +275,16 @@ To reproduce the figures and results from the paper:
 
 ---
 
-## Analysis Details
+## 🔬 Analysis Details
 
-### Network Construction
+### 🕸️ Network Construction
 
 Contact matrices are converted to weighted graphs where:
 - **Nodes**: Age groups (16 nodes per network)
 - **Edges**: Weighted by contact frequency
 - **Preprocessing**: Symmetrization (since contacts are bidirectional) and handling missing data
 
-### Structural Metrics
+### 📊 Structural Metrics
 
 - **Clustering Coefficient (C)**: Measures local connectivity and transitivity
 - **Average Path Length (L)**: Average shortest path between all node pairs
@@ -283,7 +292,7 @@ Contact matrices are converted to weighted graphs where:
 - **Degree & Strength**: Node connectivity and weighted connectivity distributions
 - **Centrality**: Betweenness and eigenvector centrality
 
-### Modularity Analysis
+### 🧩 Modularity Analysis
 
 - **Algorithm**: Louvain community detection (hierarchical, optimization-based)
 - **Null Models**:
@@ -292,7 +301,7 @@ Contact matrices are converted to weighted graphs where:
   - **Barabási-Albert (BA)**: Scale-free networks with preferential attachment
 - **Comparison**: Statistical tests (z-scores, p-values) against null distributions
 
-### Controllability Metrics
+### 🎯 Controllability Metrics
 
 Based on linear network control theory:
 
@@ -304,23 +313,23 @@ These metrics are computed from the network adjacency matrix using eigenvalue de
 
 ---
 
-## Key Findings
+## 💡 Key Findings
 
 The analysis reveals:
 
-1. **Context-dependent modularity**: School and home networks show higher modularity than work networks, reflecting age-assortative mixing patterns
+1. 🏫🏠 **Context-dependent modularity**: School and home networks show higher modularity than work networks, reflecting age-assortative mixing patterns
 
-2. **Structure-controllability relationship**: Networks with higher clustering tend to have different controllability profiles
+2. 🔗 **Structure-controllability relationship**: Networks with higher clustering tend to have different controllability profiles
 
-3. **Deviation from null models**: Real contact networks show distinct structural properties compared to random network models
+3. 📉 **Deviation from null models**: Real contact networks show distinct structural properties compared to random network models
 
-4. **Cross-country patterns**: Despite geographical differences, similar contexts show consistent structural and controllability properties
+4. 🌍 **Cross-country patterns**: Despite geographical differences, similar contexts show consistent structural and controllability properties
 
 ---
 
-## Requirements
+## 📋 Requirements
 
-### Python Packages
+### 🐍 Python Packages
 
 ```
 numpy>=1.19.0
@@ -333,7 +342,7 @@ openpyxl>=3.0.0
 jupyter>=1.0.0
 ```
 
-### System Requirements
+### 💻 System Requirements
 
 - **RAM**: 4GB+ recommended (for processing multiple large networks)
 - **Storage**: ~500MB for dataset and outputs
@@ -341,7 +350,7 @@ jupyter>=1.0.0
 
 ---
 
-## Citation
+## 📚 Citation
 
 If you use this code or dataset in your research, please cite:
 
@@ -355,7 +364,7 @@ If you use this code or dataset in your research, please cite:
 }
 ```
 
-### Dataset Citation
+### 📊 Dataset Citation
 
 Please also cite the original contact matrix data:
 
@@ -374,29 +383,29 @@ Please also cite the original contact matrix data:
 
 ---
 
-## Glossary (For Students New to Network Science)
+## 📖 Glossary (For Students New to Network Science)
 
-### Basic Network Concepts
+### 🕸️ Basic Network Concepts
 
 - **Network/Graph**: A collection of nodes (vertices) connected by edges (links)
 - **Weighted Network**: Edges have numerical values representing connection strength
 - **Degree**: Number of connections a node has
 - **Clustering**: Tendency of nodes to form tightly connected groups
 
-### Modularity
+### 🧩 Modularity
 
 - **Community**: A group of nodes more densely connected to each other than to the rest of the network
 - **Modularity**: A metric (0 to 1) measuring how well a network divides into communities
 - **Louvain Algorithm**: A fast method to detect communities by optimizing modularity
 
-### Controllability
+### 🎯 Controllability
 
 - **Network Control Theory**: Mathematical framework for understanding how to drive a network from one state to another
 - **Average Controllability**: How easily a network can be moved to nearby states
 - **Modal Controllability**: How easily a network can be moved to distant, hard-to-reach states
 - **Control Energy**: The "effort" required to change the network's state
 
-### Null Models
+### 🎲 Null Models
 
 - **Null Model**: A random network used for comparison to determine if observed patterns are statistically significant
 - **Erdős-Rényi (ER)**: Simplest random network where each possible edge exists with equal probability
@@ -405,9 +414,9 @@ Please also cite the original contact matrix data:
 
 ---
 
-## Troubleshooting
+## 🔧 Troubleshooting
 
-### Common Issues
+### ⚠️ Common Issues
 
 1. **"No module named 'community'"**
    ```bash
@@ -433,7 +442,7 @@ Please also cite the original contact matrix data:
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
 This is a course project repository. If you find issues or have suggestions:
 1. Open an issue describing the problem
@@ -441,7 +450,7 @@ This is a course project repository. If you find issues or have suggestions:
 
 ---
 
-## License
+## 📜 License
 
 This project is for educational purposes as part of ESE 5660 at the University of Pennsylvania.
 
@@ -449,7 +458,7 @@ The contact matrix data is from Prem et al. (2017) and subject to their original
 
 ---
 
-## Contact
+## 📬 Contact
 
 For questions about this project:
 - **Course**: ESE 5660 - Network Neuroscience
@@ -458,7 +467,7 @@ For questions about this project:
 
 ---
 
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - **Data source**: Prem et al. (2017) for providing comprehensive contact matrices
 - **Course instruction**: ESE 5660 teaching staff
